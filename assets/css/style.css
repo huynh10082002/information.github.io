@@ -1,0 +1,116 @@
+:root {
+    --facebook-color: #3b5999;
+    --twitter-color: #46c1f6;
+    --github-color: #333;
+    --instagram-color: #e1306c;
+    --youtube-color: #de463b;
+}
+
+html {
+     font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wapper {
+    display: flex;
+}
+
+.icon {
+    margin: 0 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.icon i {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fff;
+    font-size: 25px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon .bottom-icon {
+    position: absolute;
+    color: #fff;
+    opacity: 0;
+    padding: 10px 18px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: 500;
+    pointer-events: none;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+}
+
+.bottom-icon, .icon i{
+    transition: 0.3s;
+}
+
+.icon .bottom-icon::before {
+    position: absolute;
+    content: ' ';
+    height: 15px;
+    width: 15px;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%) rotate(40deg);
+}
+
+.icon:hover i {
+    color: #fff;
+}
+
+.icon:hover .bottom-icon {
+    opacity: 1;
+    pointer-events: auto;
+    top: -70px;
+}
+
+.icon a {
+    color: #333;
+    text-decoration: none;
+}
+
+.facebook .bottom-icon::before,
+.facebook:hover i, .facebook .bottom-icon{
+    background: var(--facebook-color);
+}
+
+.github .bottom-icon::before,
+.github:hover i, .github .bottom-icon {
+    background: var(--github-color);
+}
+
+.twitter .bottom-icon::before,
+.twitter:hover i, .twitter .bottom-icon {
+    background: var(--twitter-color);
+}
+
+.instagram .bottom-icon::before,
+.instagram:hover i, .instagram .bottom-icon {
+    background: var(--instagram-color);
+}
+
+.youtube .bottom-icon::before,
+.youtube:hover i, .youtube .bottom-icon {
+    background: var(--youtube-color);
+}
